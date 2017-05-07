@@ -5,9 +5,7 @@
 #	* tmux
 #	* vim
 #	* git
-#	* screen
-#	* tig
-
+#   * nvim
 HOME=${HOME}
 PWD=`pwd`
 OH_MY_ZSH=${HOME}"/.oh-my-zsh"
@@ -15,7 +13,7 @@ VIM=${HOME}"/.vim"
 
 # Pre check
 check_software_exist(){
-	softwares=("zsh" "tmux" "vim" "git")
+	softwares=("zsh" "tmux" "vim" "git" "neovim")
 	for sw in "${softwares[@]}"
 	do
 		# Notice the semicolon
@@ -25,12 +23,12 @@ check_software_exist(){
 }
 
 create_symlinks(){
-	dotfiles=(".zshrc" ".tmux.conf" ".vimrc" ".gitconfig" )
+	dotfiles=(".zshrc" ".tmux.conf" ".vimrc" ".gitconfig" ".config/nvim/init.vim")
 	for dotfile in "${dotfiles[@]}"
 	do
 		ln -sf ${PWD}/${dotfile} ${HOME}/${dotfile}
 		echo "Create symlink ${HOME}/${dotfile}"
-	done
+    done
 }
 
 install_oh_my_zsh(){
