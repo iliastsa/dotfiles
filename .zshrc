@@ -86,8 +86,8 @@ source $ZSH/oh-my-zsh.sh
 DEFAULT_USER=EvanKaraf
 alias sshstart="sudo service ssh start;  sudo service fail2ban start"
 alias sshstop="sudo service ssh stop; sudo service fail2ban stop"
-alias simple="~/./changeSimple.sh && source ~/.zshrc"
-alias complex="~/./changeComplex.sh && source ~/.zshrc"
+alias simple="${HOME}/dotfiles/./changeSimple.sh && source ${HOME}/.zshrc"
+alias complex="${HOME}/./changeComplex.sh && source ${HOME}/.zshrc"
 alias ll="ls -la"
 alias ssh29="ssh sdi1500063@linux29.di.uoa.gr"
 alias ..="cd .."

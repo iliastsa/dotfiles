@@ -1,5 +1,5 @@
 #!/bin/zsh
-sed -i s/gentoo/agnoster/g /home/EvanKaraf/.zshrc
+sed -i s/gentoo/agnoster/g ${HOME}/.zshrc
 
 
 
