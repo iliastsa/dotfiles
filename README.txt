@@ -1,6 +1,6 @@
-My personal dotfiles.
+## My personal dotfiles.
 
-##Installation
+### Installation
 ./setup.sh
 
-A simpler version of [this](https://github.com/tankywoo/dotfiles)
+##### A simpler version of [this](https://github.com/tankywoo/dotfiles)
