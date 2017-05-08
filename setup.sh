@@ -13,12 +13,12 @@ VIM=${HOME}"/.vim"
 
 # Pre check
 check_software_exist(){
-	softwares=("zsh" "tmux" "vim" "git" "neovim")
+	softwares=("zsh" "tmux" "vim" "git" "nvim")
 	for sw in "${softwares[@]}"
 	do
 		# Notice the semicolon
 		type ${sw} > /dev/null 2>&1 || 
-			{ echo &2 "ERROR: **${sw}** is not installed!"; exit 1; }
+			{ echo "ERROR: **${sw}** is not installed!"; exit 1; }
 	done
 }
 
@@ -122,11 +122,11 @@ config_vimAddons(){
 }
 
 main(){
-	check_software_exist
-	install_oh_my_zsh
-	create_symlinks
-	config_zsh
-	config_tmux
+    check_software_exist
+    install_oh_my_zsh
+    create_symlinks
+    config_zsh
+    config_tmux
     config_pathogen
     config_vimAddons
 }
