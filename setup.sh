@@ -24,7 +24,6 @@ check_software_exist(){
 
 create_symlinks(){
 	dotfiles=(".zshrc" ".tmux.conf" ".vimrc" ".gitconfig" ".config/nvim/init.vim")
-	echo "IM HEREEEE `pwd`"
 	for dotfile in "${dotfiles[@]}"
 	do
 		ln -sf ${PWD}/${dotfile} ${HOME}/${dotfile}
@@ -126,9 +125,10 @@ config_nvim(){
     if [ -d .config/nvim/init.vim ]; then
         echo "Nvim is already configured"
     else
-        echo "Creating init.vim"
-        mkdir .config/nvim
-        touch .config/nvim/init.vim
+        echo "Creating nvim directory"
+        mkdir -p ${HOME}/.config/nvim/
+	echo "Creating init.vim"
+        touch ${HOME}/.config/nvim/init.vim
     fi
 }
 
