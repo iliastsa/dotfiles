@@ -104,7 +104,7 @@ config_vimAddons(){
 		echo "Change directory back to `pwd`"
 	else
 		echo "NerdTree doesn't exists. Installing..."
-		git clone https://github.com/scrooloose.git ${VIM}/bundle/nerdtree
+		git clone https://github.com/scrooloose/nerdtree.git ${VIM}/bundle/nerdtree
 	fi
     #lighline
     echo "Downloading lighline"
