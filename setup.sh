@@ -121,9 +121,22 @@ config_vimAddons(){
 	fi
 }
 
+config_nvim(){
+    cd ${HOME}/.config
+    if [ -d nvim/init.vim ]; then
+        echo "Nvim is already configured"
+    else
+        echo "Creating init.vim"
+        mkdir nvim
+        cd nvim
+        touch init.vim
+    fi
+}
+
 main(){
     check_software_exist
     install_oh_my_zsh
+    config_nvim
     create_symlinks
     config_zsh
     config_tmux
