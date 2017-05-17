@@ -40,7 +40,7 @@ install_oh_my_zsh(){
 		cd - > /dev/null 2>&1
 		echo "Change directory back to `pwd`"
 	else
-		echo "${OH_MY_ZSH} not exists. Install..."
+		echo "${OH_MY_ZSH} doesn't exists. Installing..."
 		#git clone git@github.com:robbyrussell/oh-my-zsh.git ${HOME}/.oh-my-zsh
 		#wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 		git clone https://github.com/robbyrussell/oh-my-zsh.git ${HOME}/.oh-my-zsh
@@ -56,6 +56,18 @@ config_zsh(){
 	ln -sf ${PWD}/tools ${HOME}/tools
 	# TODO: See ~/.oh-my-zsh/custom/
 	chsh -s `which zsh` # TODO: If zsh is an alias?
+    #Plugins
+    if [ -d "${OH_MY_ZSH}/custom/plugins/zsh-autosuggestions" ]; then
+        cd "${OH_MY_ZSH}/custom/plugins/zsh-autosuggestions" 
+        echo "Change directory to `pwd`"
+        echo "${ZSH_CUSTOM}/plugins/zsh-autosuggestions exists. Git pull to update..."
+        git pull
+        cd - > /dev/null 2>&1
+        echo "Change directory back to `pwd`"
+    else
+        echo  "${ZSH_CUSTOM}/plugins/zsh-autosuggestions doesn't exists. Installing.." 
+        git clone htpps://github.com/zsh-users/zsh-autosuggestions ${OH_MY_ZSH}/custom/plugins/zsh-autosuggestions
+    fi
 	source ${HOME}/.zshrc
 }
 
@@ -127,7 +139,7 @@ config_nvim(){
     else
         echo "Creating nvim directory"
         mkdir -p ${HOME}/.config/nvim/
-	echo "Creating init.vim"
+	    echo "Creating init.vim"
         touch ${HOME}/.config/nvim/init.vim
     fi
 }
