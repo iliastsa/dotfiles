@@ -23,7 +23,7 @@ check_software_exist(){
 }
 
 create_symlinks(){
-	dotfiles=(".zshrc" ".tmux.conf" ".vimrc" ".gitconfig" ".config/nvim/init.vim")
+	dotfiles=(".bashrc" ".zshrc" ".tmux.conf" ".vimrc" ".gitconfig" ".config/nvim/init.vim")
 	for dotfile in "${dotfiles[@]}"
 	do
 		ln -sf ${PWD}/${dotfile} ${HOME}/${dotfile}
@@ -66,7 +66,7 @@ config_zsh(){
         echo "Change directory back to `pwd`"
     else
         echo  "${ZSH_CUSTOM}/plugins/zsh-autosuggestions doesn't exists. Installing.." 
-        git clone htpps://github.com/zsh-users/zsh-autosuggestions ${OH_MY_ZSH}/custom/plugins/zsh-autosuggestions
+        git clone https://github.com/zsh-users/zsh-autosuggestions ${OH_MY_ZSH}/custom/plugins/zsh-autosuggestions
     fi
 	source ${HOME}/.zshrc
 }
